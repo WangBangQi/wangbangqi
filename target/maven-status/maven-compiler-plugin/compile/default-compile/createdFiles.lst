@@ -1,0 +1,15 @@
+META-INF/spring-configuration-metadata.json
+com/zimo/wangbangqi/utils/ResultUtil.class
+com/zimo/wangbangqi/model/Girl.class
+com/zimo/wangbangqi/WangbangqiApplication.class
+com/zimo/wangbangqi/handler/ExceptionHandle.class
+com/zimo/wangbangqi/dao/GirlDao.class
+com/zimo/wangbangqi/aspect/HttpAspect.class
+com/zimo/wangbangqi/enums/Code.class
+com/zimo/wangbangqi/exception/GirlException.class
+com/zimo/wangbangqi/enums/ResultEnum.class
+com/zimo/wangbangqi/controller/HelloController.class
+com/zimo/wangbangqi/properties/GirlProperties.class
+com/zimo/wangbangqi/controller/GirlController.class
+com/zimo/wangbangqi/model/Result.class
+com/zimo/wangbangqi/service/GirlService.class

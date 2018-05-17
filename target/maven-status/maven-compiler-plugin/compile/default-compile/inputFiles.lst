@@ -1,0 +1,14 @@
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/dao/GirlDao.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/properties/GirlProperties.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/model/Result.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/enums/Code.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/controller/HelloController.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/service/GirlService.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/enums/ResultEnum.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/aspect/HttpAspect.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/utils/ResultUtil.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/exception/GirlException.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/WangbangqiApplication.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/model/Girl.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/handler/ExceptionHandle.java
+/Users/captain/GitHub/wangbangqi/src/main/java/com/zimo/wangbangqi/controller/GirlController.java

@@ -1,0 +1,22 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.zimo.wangbangqi.properties.GirlProperties",
+      "name": "girl",
+      "type": "com.zimo.wangbangqi.properties.GirlProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.zimo.wangbangqi.properties.GirlProperties",
+      "name": "girl.age",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zimo.wangbangqi.properties.GirlProperties",
+      "name": "girl.cup-size",
+      "type": "java.lang.String"
+    }
+  ]
+}
