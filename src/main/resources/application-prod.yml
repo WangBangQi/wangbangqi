@@ -1,7 +1,7 @@
 #必须要加一个空格
 #生产环境
 server:
-  port: 8081
+  port: 8080
 girl:
   cupSize: F
   age: 18
@@ -17,5 +17,5 @@ spring:
     hibernate:
       ddl-auto: update  #不删除原来的表。只是新建没有的表
 #      ddl-auto: create  #自动创建表,创建一个空的表，在这之前的表被删掉。
-    show-sql: false  #可以让我们在控制台看见sql语句
+    show-sql: true  #可以让我们在控制台看见sql语句
     database-platform:  org.hibernate.dialect.MySQL5InnoDBDialect #创建表的时候使用InnoDB引擎，不然默认是MyISAM

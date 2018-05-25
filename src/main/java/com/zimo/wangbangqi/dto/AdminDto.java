@@ -9,6 +9,15 @@ public class AdminDto {
     private String accNum;  //唯一
     private Boolean root;
     private List<WaiterDto> waiterDtoList;
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public List<WaiterDto> getWaiterDtoList() {
         return waiterDtoList;

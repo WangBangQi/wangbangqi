@@ -2,8 +2,13 @@
 spring:
   profiles:
     active: prod
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      enabled: true
+      max-request-size: 100MB
 
 
 
-
+uploadDir: classpath:/test/hah
 

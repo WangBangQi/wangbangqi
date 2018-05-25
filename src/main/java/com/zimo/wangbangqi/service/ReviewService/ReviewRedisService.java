@@ -1,5 +1,6 @@
 package com.zimo.wangbangqi.service.ReviewService;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.zimo.wangbangqi.model.Review;
 import com.zimo.wangbangqi.utils.StringKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,19 +15,21 @@ public class ReviewRedisService {
     @Autowired
     private ListOperations operations;
 
-    private String buildKey(Integer waiterId){
-        return StringKeyUtil.buildKey(Review.class,waiterId);
-    }
     //新增一评论
-    public void addReview(Review review){
-        operations.leftPush(buildKey(review.getWaiterId()),review);
+    public void addReview(String key,Review review){
+        operations.leftPush(key,review);
     }
     //返回最新的20条评论
-    public List<Review> listReviewByWaiterId(Integer waiterId,Integer start,Integer stop) {
-       return operations.range(buildKey(waiterId),start.longValue(),stop.longValue());
+    public List<Review> listReviewByKey(String key,Integer start,Integer stop) {
+       return operations.range(key,start.longValue(),stop.longValue());
     }
 
-    public Integer getListLen(Integer waiterId){
-        return operations.size(buildKey(waiterId)).intValue();
+    public Integer getListLen(String key){
+        return operations.size(key).intValue();
     }
+    public void delete(String key,Review review){
+        operations.remove(key,new Integer(6).longValue(),review);
+    }
+
+
 }

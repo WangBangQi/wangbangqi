@@ -3,8 +3,10 @@ package com.zimo.wangbangqi.interactor;
 import com.alibaba.fastjson.JSON;
 import com.zimo.wangbangqi.model.Admin;
 import com.zimo.wangbangqi.model.Result;
+import com.zimo.wangbangqi.service.AccessTokenService;
 import com.zimo.wangbangqi.service.adminService.AdminService;
 import com.zimo.wangbangqi.utils.SpringUtil;
+import com.zimo.wangbangqi.utils.TokenUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.lang.Nullable;
@@ -17,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Enumeration;
+import java.util.Map;
 
 @Component
 public class AdminInterceptor implements HandlerInterceptor{
@@ -32,15 +36,35 @@ public class AdminInterceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         logger.info("=========== request before ============");
-        AdminService adminService = SpringUtil.getBean(AdminService.class);
-        Admin admin = new Admin();
+//        AdminService adminService = SpringUtil.getBean(AdminService.class);
+//        Admin admin = new Admin();
 //        Map<String,String[]> map = request.getParameterMap();
 //        Enumeration<String> enumeration = request.getParameterNames();
-        admin.setAccNum(request.getParameter("accNum"));
-        admin.setPassword(request.getParameter("password"));
-        logger.info("admin accNum : {}" ,admin.getAccNum());
-        logger.info("admin password : {}","******");
-        return adminService.judgeAdmin(admin);
+//        admin.setAccNum(request.getParameter("accNum"));
+//        admin.setPassword(request.getParameter("password"));
+//        logger.info("admin accNum : {}" ,admin.getAccNum());
+//        logger.info("admin password : {}","******");
+//        return adminService.judgeAdmin(admin);
+        //验证token，以及是否为Admin。
+//        String token = request.getAuthType().getBytes().toString();
+//        logger.info("Auth {}",request.getAuthType());
+//        logger.info("AA {}",request.getHeaders("token").toString());
+//        logger.info("cookie",request.getCookies());
+        AccessTokenService accessTokenService = SpringUtil.getBean(AccessTokenService.class);
+        String token = request.getHeader("authorization");
+        if(TokenUtils.isValid(token)){
+            if (accessTokenService.tokenExist(token)){
+                Map<String,Object> claims = TokenUtils.parseJWTtoMap(token);
+                Boolean admin = (Boolean) claims.get("admin");
+                if(admin != null && admin == true)
+                    return true;
+            }
+        } else {
+            //需要重新登录。
+            accessTokenService.delete(token);
+        }
+
+        return false;
     }
 
     @Override

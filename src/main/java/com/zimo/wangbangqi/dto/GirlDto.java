@@ -1,6 +1,8 @@
 package com.zimo.wangbangqi.dto;
 
+import com.zimo.wangbangqi.enums.GirlStatusEnum;
 import com.zimo.wangbangqi.model.Class;
+import com.zimo.wangbangqi.validated.EnumValue;
 import com.zimo.wangbangqi.validated.WorkTime;
 import org.springframework.lang.Nullable;
 
@@ -14,11 +16,20 @@ public class GirlDto {
     private String name;
     @Min(value = 18,message = "未满18岁无法添加")
     private Integer age;
-    @Nullable
     @WorkTime(max = 7,message = "工作时间不能超过7小时")
     private Integer workTime;
     private String beauty;
     private List<Class> classes;  //课程编号集合。
+    @EnumValue(enumClass = GirlStatusEnum.class,enumMethod = "isValidName",message = "值是无效的")
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public Integer getGirlId() {
         return girlId;

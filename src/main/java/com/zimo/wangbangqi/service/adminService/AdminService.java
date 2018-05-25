@@ -1,6 +1,4 @@
 package com.zimo.wangbangqi.service.adminService;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.zimo.wangbangqi.dao.AdminDao;
 import com.zimo.wangbangqi.dto.AdminDto;
 import com.zimo.wangbangqi.dtoFactory.AdminDtoFactory;
@@ -9,6 +7,9 @@ import com.zimo.wangbangqi.model.Admin;
 import com.zimo.wangbangqi.utils.StringKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class AdminService {
@@ -88,5 +89,22 @@ public class AdminService {
         admin.setAccNum(accNum);
         admin.setPassword(password);
         return judgeAdmin(admin);
+    }
+
+    /**
+     * 不存入缓存，放入数据库中,只从数据库获取
+     * @return
+     */
+    public List<AdminDto> getAll(){
+        List<Admin> admins = adminDao.findAll();
+        List<AdminDto> list = new ArrayList<>();
+        try {
+            for (Admin admin : admins){
+                list.add(new AdminDtoFactory(admin).build());
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
     }
 }

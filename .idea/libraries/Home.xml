@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Home">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" />
+      <root url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" />
+      <root url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" />
+    </SOURCES>
+    <excluded>
+      <root url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" />
+    </excluded>
+    <jarDirectory url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" recursive="false" type="SOURCES" />
+    <jarDirectory url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" recursive="false" type="SOURCES" />
+    <jarDirectory url="file:///Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home" recursive="false" type="SOURCES" />
+  </library>
+</component>
